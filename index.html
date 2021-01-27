@@ -7,79 +7,179 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
 <body>
+<main>
+  <nav>
+    <aside>
+    <img src="images/logo.svg" alt="logo">
+  <article class="links">
+    <small>Features</small>
+  <small>Pricing</small>
+  <small>Resources</small>
+  </article>
+</aside>
 
-  Features
-  Pricing
-  Resources
+  <article class="registration">
+ <a href="#"> <small>Login</small></a>
+  <a href="#" class="sign-up"><small>Sign Up</small></a>
+</article>
 
-  Login
-  Sign Up
+  <!-- for mobile display  -->
+  <aside class="mobile-menu">
+    <img src="images/icon-hamburger.svg" class="menu-icon" alt="menu">
+    <!-- <img src="images/icon-close.svg" alt="close" class="close-icon"> -->
+    <div class="mobile-links">
+      <small>Features</small>
+      <small>Pricing</small>
+      <small>Resources</small>
+      <br>
+      <small>Login</small>
+      <small class="sign-up">Sign Up</small>
+    </div>
+  </aside>
+  </nav>
 
-  More than just shorter links
+  <section class="landing">
+          <aside class="left">
+        <strong>More than just shorter links</strong>
 
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
+        <article class="text">Build your brand’s recognition and get detailed insights 
+          on how your links are performing.</article>
 
-  Get Started
-  
-  Shorten a link here...
+          <button class="get">Get Started</button>
+      </aside>
+      <img src="images/illustration-working.svg" alt="working svg" class="work-svg">
 
-  Shorten It!
+  </section>
 
-  Advanced Statistics
+<section class="pad">
+  <section class="short-sect">
+    
+    <input type="text" class="search" placeholder="Shorten a link here...">
 
-  Track how your links are performing across the web with our 
-  advanced statistics dashboard.
+    <button type="submit" class="submit-btn">Shorten It!</button>  
+</section>
 
-  Brand Recognition
+  <!-- links will be displayed here  -->
+  <aside class="results-sect">
+    <!-- <div class="result-bar">
+      <article class="original">
+          https:origi.com
+      </article>
+      <article class="new">
+         bit.new.com
+      </article>
+      <button class="copy">
+        Copy
+      </button>
+    </div> -->
+  </aside>
 
-  Boost your brand recognition with each click. Generic links don’t 
-  mean a thing. Branded links help instil confidence in your content.
 
-  Detailed Records
+<article class="advanced"><strong>  Advanced Statistics </strong>
 
-  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.
+      <article class="advanced-text">
+      Track how your links are performing across the web with our 
+      advanced statistics dashboard.
+      </article>
+</article>
 
-  Fully Customizable
+<section class="brand">
 
-  Improve brand awareness and content discoverability through customizable 
-  links, supercharging audience engagement.
+      <aside>
+      <picture><img src="images/icon-brand-recognition.svg" alt="brand recognition svg"></picture>  
+    <strong> Brand Recognition</strong>
+        <article class="brand-text">
+          
+      Boost your brand recognition with each click. Generic links don’t 
+      mean a thing. Branded links help instil confidence in your content.
+        </article>
+    </aside>
 
-  Boost your links today
+    <aside> 
+      <picture>      <img src="images/icon-detailed-records.svg" alt="detailed icon">     </picture>
+    <strong>  Detailed Records</strong>
 
-  Get Started
+    <article class="brand-text">
+      Gain insights into who is clicking your links. Knowing when and where 
+      people engage with your content helps inform better decisions.
+    </article>
+    </aside>
+    
+      <aside>
+       <picture> <img src="images/icon-fully-customizable.svg" alt="fully customizable"></picture>
+    <strong>    Fully Customizable</strong>
 
-  Features
+    <article class="brand-text">
+      Improve brand awareness and content discoverability through customizable 
+      links, supercharging audience engagement.
+    </article>
+     
+      </aside>
+</section>
+</section>
 
-  Link Shortening
-  Branded Links
-  Analytics
+<section class="boost">
+      <strong>Boost your links today</strong>
 
-  Resources
+      <button class="get ">Get Started</button>
+</section>
 
-  Blog
-  Developers
-  Support
+<footer>
+        <div class="logo">
+          <img src="images/white-logo.svg" alt="logo">
+        </div>
+        
+      <aside>
+          <strong>Features</strong>
+            <ul>
+              
+        <li>Link Shortening</li>
+        <li>Branded Links</li>
+        <li>Analytics</li>
+            </ul>
+      </aside>
 
-  Company
+      <aside>
+        <strong>Resources</strong>
+          <ul>
+            
+        <li>Blog</li>
+        <li>Developers</li>
+        <li>Support</li>
+          </ul>
+      </aside>
 
-  About
-  Our Team
-  Careers
-  Contact
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <aside>
+        <strong>Company</strong>
+
+       <ul>
+        <li>About</li>
+        <li>Our Team</li>
+        <li>Careers</li>
+        <li>Contact</li>
+       </ul>
+        </aside>
+
+        <aside class="icons">
+          <img src="images/icon-facebook.svg" alt="facebook">
+          <img src="images/icon-twitter.svg" alt="twitter">
+          <img src="images/icon-pinterest.svg" alt="pinterest">
+          <img src="images/icon-instagram.svg" alt="instagram">
+        </aside>
+        
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://paminus-kingori.github.io/portfolio/" target="_blank">Paminus King</a>.
+        </div>
+</footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
