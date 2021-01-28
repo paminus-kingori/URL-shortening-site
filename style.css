@@ -40,6 +40,7 @@ nav{
     width: 100%;
     justify-content: space-between;
     padding: 1rem 5rem 3rem 5rem;
+    flex-wrap: wrap;
 }
 nav aside{
     display: flex;
@@ -81,18 +82,39 @@ nav aside{
     justify-content: space-between;
     padding: 1rem 0 3rem 5rem;
 }
+.results-sect{
+    display: flex;
+    flex-direction: column-reverse;
+}
 .result-bar{
+    margin-bottom: 10px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     place-items:center;
     background: white;
+    flex-wrap: wrap;
     padding: 8px;
     border-radius: 4px;
-   
+   /* position:relative; */
     animation: scaler .5s cubic-bezier(0.15, 2.07, 0.99, 0.26);
 }
+.spinner{
+    width: 25px;
+    height: 25px;
+    animation: rotation 2s linear infinite;
+    transform-origin: center;
+    margin-left: 5px
+}
 
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 @keyframes scaler{
     0%{
@@ -107,7 +129,9 @@ nav aside{
 
 
 .original{
+    word-break: break-word;
     flex: 0.95;
+    min-width: 220px;
 }
 .copy{
     padding: 5px 25px;
@@ -116,13 +140,14 @@ nav aside{
     outline: none;
     cursor: pointer;
     border: none;
+    transition:.4s;
     color: white;
 }
 .copy:hover{
     background:#6af7f7;
 }
 .left{
-    max-width: 495px;
+    max-width: 435px;
 }
 .left strong{
     font-size: 5vw;
@@ -157,9 +182,12 @@ nav aside{
     flex-wrap: wrap;
     place-items: center;
     margin-bottom: 0.8rem;
-    justify-content: center;
+    justify-content: center;   
+     margin-top: 3rem;
+
 }
 .search{
+    word-break: break-word;
     flex: 0.9;
     border-radius: 4px;
     padding: 13px 15px;
@@ -167,6 +195,9 @@ nav aside{
     border: none;
 }
 .submit-btn{
+    display: flex;
+    place-items: center;
+    justify-content: center;
     padding: 13px 27px;
     background: #2bd0d0;
     border-radius: 4px;
@@ -183,6 +214,7 @@ nav aside{
     text-align: center;
     display: flex;
     place-items: center;
+    margin: 3rem 0;
     justify-content: center;
     flex-direction: column;
 }
@@ -288,8 +320,12 @@ footer aside strong{
     place-items: center;
     justify-content: space-around;
 }
-
-
+aside ul li:hover{
+    color: #2acfcf;
+}
+.icons img:hover{
+    filter: invert(50%) sepia(96%) saturate(365%) hue-rotate(123deg) brightness(97%) contrast(96%);
+}
 .attribution { 
     font-size: 12px;
      text-align: center;
@@ -304,7 +340,7 @@ font-size: 15px; }
 
 /* responsiveness  */
 
-@media screen and (max-width:500px){
+@media screen and (max-width:600px){
     nav{
         padding:15px;
     }
@@ -324,13 +360,19 @@ font-size: 15px; }
     padding: 15px;
     text-align: center;
 }
+.brand{
+    justify-content: center;
+}
 .short-sect{
+    margin-top: 1rem;
     margin-bottom: 40px;
     height: 125px;
     flex-direction: column;
     justify-content: space-evenly;
     place-items:center;
     background: url(images/bg-shorten-mobile.svg),linear-gradient(45deg,#25233a,#25233a);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .search, .submit-btn{
     width: 90%;
@@ -360,6 +402,13 @@ footer aside {
 .icons{
     width:50%;
 }
+.left strong{
+    font-size: 30px;
+}
+.advanced{
+    margin: 1rem 0;
+    padding-bottom: 2rem;
+}
 .brand aside{
     text-align: center;
     place-items: center;
@@ -369,7 +418,8 @@ footer aside {
 }
 .boost{
     background: url('images/bg-boost-mobile.svg'),linear-gradient(45deg,hsl(257, 27%, 26%), hsl(257, 27%, 26%));
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .mobile-menu{
     display:flex;
