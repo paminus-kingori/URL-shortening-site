@@ -5,8 +5,15 @@ const submit = document.querySelector('.submit-btn');
 let copyButton = document.querySelectorAll('.copy')
 const resultHolder = document.querySelector('.results-sect')
 const spinnerImage = document.createElement('img')
+const alertLbl = document.querySelector(".alert-lbl");
 spinnerImage.src = 'images/spinner.svg';
 spinnerImage.setAttribute('class','spinner')
+// let i = 0;
+
+// const newLinkArray = [];
+//  const origiArray = [];
+//  const btnArray = [];
+//  const barArray = [];
 
 const copyToClipboard = (str,cpy) => {
     const el = document.createElement('textarea');
@@ -60,21 +67,46 @@ copyBtn.addEventListener("click", () =>{
 
 submit.addEventListener('click',()=>{
 
-    submit.appendChild(spinnerImage);
+    if(input.value==""){
+        input.classList.add('alertMessage')
+        alertLbl.style.display = "block";
 
-    fetch(`${base}shorten?url=${input.value}`)
-.then(
-    data =>{
-        return data.json()
-    })
-.then((data) =>{
-    creator(`${data.result.original_link}`,`${data.result.full_short_link}`)
-    submit.removeChild(spinnerImage)
-})
-.catch(
-    (error)=>{
-        submit.removeChild(spinnerImage)
-        alert("Invalid URL, please try again.")
     }
+    else{
+        alertLbl.style.display = "none";
+    input.classList.remove('alertMessage')
+    submit.appendChild(spinnerImage);
+    fetch(`${base}shorten?url=${input.value}`)
+        .then(
+            data =>{
+                return data.json()
+            })
+        .then((data) =>{
+            creator(`${data.result.original_link}`,`${data.result.full_short_link}`)
+            submit.removeChild(spinnerImage)
+         //  sessionStorage.setItem("nLink",`${data.result.full_short_link}`);
+           // sessionStorage.setItem("oriLink",`${data.result.original_link}`);
+        //     origiArray[i] = sessionStorage.getItem("oriLink");
+        //     newLinkArray[i] = sessionStorage.getItem("nLink");
+        //     // i++;
+        //    console.log("Success")
+        //    save();
+
+
+        })
+        .catch(
+            (error)=>{
+                submit.removeChild(spinnerImage)
+                alert("Invalid URL, please try again.")
+            }
+        )}
+}
 )
-})
+// function save(){
+       
+//         console.log(origiArray[0])
+//     console.log("save ftn")
+// }
+
+
+// console.log(sessionStorage.getItem("oriLink"))

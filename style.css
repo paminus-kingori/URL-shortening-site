@@ -10,7 +10,6 @@
 }
 body{
     margin:0;
-    background-color: #f3f3f3;
 }
 .mobile-menu{
     display:none;
@@ -51,6 +50,12 @@ nav aside{
 }
 .links small:nth-child(2){
     margin: 0 1rem;
+}
+.links small{
+    cursor: pointer;
+}
+.links small:hover{
+    color: #25233a;
 }
 .registration a{
     text-decoration: none;
@@ -171,6 +176,8 @@ nav aside{
 }
 .pad{
     padding: 1rem 5rem 3rem 5rem;
+    background-color: #ebebeb;
+
 
 }
 .short-sect{
@@ -193,6 +200,21 @@ nav aside{
     padding: 13px 15px;
     outline: none;
     border: none;
+}
+.alert-lbl{
+    width: 92%;
+    display: none;
+    color: hsl(0, 87%, 67%);
+    font-weight: 200;
+    font-size: 13px;
+    transform: translateY(-10px);
+    font-style: italic;
+}
+.alertMessage{
+    border: solid 2px hsl(0, 87%, 67%);
+}
+.alertMessage::placeholder{
+    color:hsl(0, 87%, 67%);
 }
 .submit-btn{
     display: flex;
@@ -369,16 +391,20 @@ font-size: 15px; }
     height: 125px;
     flex-direction: column;
     justify-content: space-evenly;
-    place-items:center;
+    align-items: flex-end;
     background: url(images/bg-shorten-mobile.svg),linear-gradient(45deg,#25233a,#25233a);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .search, .submit-btn{
     width: 90%;
     padding: 8px 6px;
     margin:0;
     flex:0;
+}
+.submit-btn{
+    margin-top: 20px;
 }
 .work-svg{
     padding: 5px;
@@ -404,6 +430,10 @@ footer aside {
 }
 .left strong{
     font-size: 30px;
+}
+.alert-lbl{
+    transform: translate(17px, 0px);
+    position:absolute;
 }
 .advanced{
     margin: 1rem 0;
